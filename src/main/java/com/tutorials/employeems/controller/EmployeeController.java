@@ -1,5 +1,6 @@
 package com.tutorials.employeems.controller;
 
+import com.netflix.discovery.DiscoveryClient;
 import com.tutorials.employeems.model.Department;
 import com.tutorials.employeems.model.Employee;
 import com.tutorials.employeems.service.EmployeeService;
@@ -14,14 +15,17 @@ import java.util.List;
 public class EmployeeController {
     @Autowired
     EmployeeService service;
+
     @GetMapping("/")
     public List<Employee> getEmployees() {
         return new ArrayList<>();
     }
+
     @GetMapping("/{employeeId}")
     public Employee getEmployeeDetails(@PathVariable String employeeId) {
-        return new Employee(1,"Random", new Department(002,"Accounts"));
+        return new Employee(1, "Random", new Department(002, "Accounts"));
     }
+
     @PostMapping("/{employeeId}")
     public String addEmployee(Employee employee) throws Exception {
         return service.addEmployee(employee);
