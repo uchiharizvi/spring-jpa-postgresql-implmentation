@@ -10,7 +10,7 @@ public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "employee_id")
-    private Integer employeeId;
+    private Long employeeId;
     @Column(name = "employee_name")
     private String employeeName;
     @Column(name = "employee_email")
@@ -21,7 +21,7 @@ public class Employee {
     protected Employee() {
     }
 
-    public Employee(Integer employeeId, String employeeName, String email) {
+    public Employee(Long employeeId, String employeeName, String email) {
         this.employeeId = employeeId;
         this.employeeName = employeeName;
         this.email = email;
@@ -34,7 +34,7 @@ public class Employee {
         return new Timestamp(time);
     }
 
-    public Integer getEmployeeId() {
+    public Long getEmployeeId() {
         return employeeId;
     }
 

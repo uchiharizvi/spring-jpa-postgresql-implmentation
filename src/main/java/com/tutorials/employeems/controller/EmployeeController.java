@@ -21,12 +21,12 @@ public class EmployeeController {
         return new ArrayList<>();
     }
 
-    @GetMapping("/{employeeId}")
+    /*@GetMapping("/{employeeId}")
     public Employee getEmployeeDetails(@PathVariable String employeeId) {
         return new Employee(1, "Random", new Department(002, "Accounts"));
-    }
+    }*/
 
-    @PostMapping("/{employeeId}")
+    @PostMapping("/add")
     public String addEmployee(Employee employee) throws Exception {
         return service.addEmployee(employee);
     }
